@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicalTrial.App", "Clinic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicalTrial.Application", "ClinicalTrial.Application\ClinicalTrial.Application.csproj", "{93F5A64D-CCEE-4647-8F72-664E70C5A6A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicalTrial.Domain", "ClinicalTrial.Domain\ClinicalTrial.Domain.csproj", "{ED0E0115-53D5-49ED-89F1-58B697C2D20B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{93F5A64D-CCEE-4647-8F72-664E70C5A6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93F5A64D-CCEE-4647-8F72-664E70C5A6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93F5A64D-CCEE-4647-8F72-664E70C5A6A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0E0115-53D5-49ED-89F1-58B697C2D20B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0E0115-53D5-49ED-89F1-58B697C2D20B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0E0115-53D5-49ED-89F1-58B697C2D20B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0E0115-53D5-49ED-89F1-58B697C2D20B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
