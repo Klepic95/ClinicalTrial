@@ -19,7 +19,7 @@ namespace ClinicalTrial.Infrastructure.DependencyExtension
 
         public static IServiceCollection RegisterInfrastructureDependencies(this IServiceCollection services, string connectionString)
         {
-            services.AddScoped<IRepository<Domain.Entities.ClinicalTrial>, ClinicalTrialRepository>();
+            services.AddTransient<IRepository<Domain.Entities.ClinicalTrial>, ClinicalTrialRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork.UnitOfWork>();
             services.AddDbContext<ClinicalTrialDbContext>(options => options.UseSqlServer(connectionString));
             return services;
