@@ -1,7 +1,7 @@
 ﻿
 using ClinicalTrial.Domain.Enums;
 
-namespace Domain.Entities
+namespace ClinicalTrial.Domain.Entities
 {
     public class SystemLog
     {
