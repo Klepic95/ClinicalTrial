@@ -1,3 +1,4 @@
+using ClinicalTrial.App.Extensions;
 using ClinicalTrial.Application.Extensions;
 using ClinicalTrial.Infrastructure.DependencyExtension;
 using ClinicalTrial.Infrastructure.MSSqlDatabase;
@@ -15,6 +16,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Host.AddSerilog();
 
+builder.Services.AddAppExtensions();
 builder.Services.RegisterInfrastructureDependencies(builder.Configuration.GetConnectionString("Default"));
 builder.Services
     .AddControllers().AddApplicationPart(typeof(PresentationAssembly).Assembly)

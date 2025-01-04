@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace ClinicalTrial.Presentation.Controllers
 {
     [Route("clinicalTrial")]
-    public class ClinicaltrialController : ControllerBase
+    public class ClinicalTrialController : ControllerBase
     {
         private readonly ISender _sender;
 
-        public ClinicaltrialController(ISender sender)
+        public ClinicalTrialController(ISender sender)
         {
             _sender = sender;
         }
