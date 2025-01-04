@@ -65,7 +65,7 @@ namespace ClinicalTrial.Application.CQRS.Handlers.Commands
                 {
                     clinicalTrial.EndDate = clinicalTrial.StartDate.AddMonths(1);
                 }
-                if (clinicalTrial.EndDate == default)
+                if (clinicalTrial.EndDate != default)
                 {
                     clinicalTrial.DurationInDays = (clinicalTrial.EndDate - clinicalTrial.StartDate).Days;
                 }
