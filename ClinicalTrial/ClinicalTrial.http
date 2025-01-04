@@ -1,6 +1,0 @@
-@ClinicalTrial_HostAddress = http://localhost:5075
-
-GET {{ClinicalTrial_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
