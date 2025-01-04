@@ -27,6 +27,6 @@ services:
         condition: service_healthy
     environment:
       ASPNETCORE_ENVIRONMENT: Docker
-      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=ClinicalTrial;User=sa;Password=ctaPass1!"
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=ClinicalTrial;User=sa;Password=ctaPass1!;TrustServerCertificate=true"
     command: >
       sh -c "dotnet ef database update --project /app/ClinicalTrial.Infrastructure && dotnet ClinicalTrial.App.dll"

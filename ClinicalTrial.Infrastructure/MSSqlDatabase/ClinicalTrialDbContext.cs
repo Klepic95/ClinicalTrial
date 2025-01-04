@@ -1,24 +1,26 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace ClinicalTrial.Infrastructure.MSSqlDatabase;
 
 public class ClinicalTrialDbContext : DbContext
 {
     public DbSet<Domain.Entities.ClinicalTrial> ClinicalTrials { get; set; }
+    private readonly IConfiguration _configuration;
 
     public ClinicalTrialDbContext()
     {
             
     }
-    public ClinicalTrialDbContext(DbContextOptions<ClinicalTrialDbContext> options) : base(options) 
+    public ClinicalTrialDbContext(DbContextOptions<ClinicalTrialDbContext> options, IConfiguration configuration) : base(options)
     {
-
+        _configuration = configuration;
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(GetConnectionstring());
+        optionsBuilder.UseSqlServer(_configuration.GetConnectionString("Default"));
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -31,19 +33,5 @@ public class ClinicalTrialDbContext : DbContext
         modelBuilder.Entity<Domain.Entities.ClinicalTrial>()
             .Property(c => c.Id)
             .ValueGeneratedOnAdd();
-    }
-
-    private static string GetConnectionstring()
-    {
-        bool isDocker = Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") == "true";
-
-        SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder()
-        {
-            DataSource = isDocker ? "host.docker.internal,1433" : "localhost,1433",
-            UserID = "sa",
-            Password = "ctaPass1!",
-            TrustServerCertificate = true,
-        };
-        return builder.ConnectionString;
     }
 }
