@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicalTrial.App", "ClinicalTrial.App\ClinicalTrial.App.csproj", "{EAD8D23E-600A-47F5-BEF1-A377712BE0F6}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicalTrial.Infrastructure", "ClinicalTrial.Infrastructure\ClinicalTrial.Infrastructure.csproj", "{60722D71-6B67-4F28-B9B6-077863221F80}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicalTrial.Presentation", "ClinicalTrial.Presentation\ClinicalTrial.Presentation.csproj", "{E3AF7EAD-AA07-4B96-A4EE-ED6B639334EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicalTrial.UnitTests", "ClinicalTrial.UnitTests\ClinicalTrial.UnitTests.csproj", "{F1630F7A-B671-44CF-A039-1B9525C6379F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E3AF7EAD-AA07-4B96-A4EE-ED6B639334EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3AF7EAD-AA07-4B96-A4EE-ED6B639334EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3AF7EAD-AA07-4B96-A4EE-ED6B639334EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1630F7A-B671-44CF-A039-1B9525C6379F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1630F7A-B671-44CF-A039-1B9525C6379F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1630F7A-B671-44CF-A039-1B9525C6379F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1630F7A-B671-44CF-A039-1B9525C6379F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

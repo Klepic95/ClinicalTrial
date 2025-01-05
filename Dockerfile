@@ -9,6 +9,7 @@ COPY ["ClinicalTrial.Application/ClinicalTrial.Application.csproj", "ClinicalTri
 COPY ["ClinicalTrial.Domain/ClinicalTrial.Domain.csproj", "ClinicalTrial.Domain/"]
 COPY ["ClinicalTrial.Infrastructure/ClinicalTrial.Infrastructure.csproj", "ClinicalTrial.Infrastructure/"]
 COPY ["ClinicalTrial.Presentation/ClinicalTrial.Presentation.csproj", "ClinicalTrial.Presentation/"]
+COPY ["ClinicalTrial.UnitTests/ClinicalTrial.UnitTests.csproj", "ClinicalTrial.UnitTests/"]
 
 RUN dotnet restore "ClinicalTrial.sln"
 

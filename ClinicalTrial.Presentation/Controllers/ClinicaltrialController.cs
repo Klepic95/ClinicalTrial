@@ -26,10 +26,10 @@ namespace ClinicalTrial.Presentation.Controllers
             }
 
             var command = new CreateClinicalTrialCommand(file);
-            var result = await _sender.Send(command);
 
             try
             {
+                var result = await _sender.Send(command);
                 return Ok($"File processed successfully. Id of the processed file is: {result}");
             }
             catch (Exception ex)
