@@ -8,7 +8,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 using System.Reflection;
-using System.Security.AccessControl;
 
 namespace ClinicalTrial.Application.CQRS.Handlers.Commands
 {

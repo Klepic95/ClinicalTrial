@@ -4,7 +4,6 @@ using ClinicalTrial.Domain.Entities;
 using ClinicalTrial.Domain.Enums;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System.Security.AccessControl;
 
 namespace ClinicalTrial.Application.CQRS.Handlers.Queries
 {
