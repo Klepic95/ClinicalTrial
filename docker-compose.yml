@@ -17,8 +17,8 @@ services:
 
   clinicaltrial:
     build:
-      context: .  # Build the Docker image from the current directory
-      dockerfile: Dockerfile  # Use the specified Dockerfile for the build
+      context: .
+      dockerfile: Dockerfile
     container_name: clinical-trial-api
     ports:
       - "8080:8080"
