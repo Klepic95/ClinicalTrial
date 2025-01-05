@@ -47,27 +47,7 @@ namespace ClinicalTrial.Application.CQRS.Handlers.Commands
                 }
 
                 var clinicalTrial = JsonConvert.DeserializeObject<Domain.Entities.ClinicalTrial>(jsonContent);
-
-                if (clinicalTrial?.Participants < 1)
-                {
-                    _logger.LogError("{@SystemLog}", new SystemLog()
-                    {
-                        Event = Event.Create,
-                        Comment = "Clinical Trial participants validation",
-                        CreatedAt = DateTime.UtcNow,
-                        ChangeSet = new[] { clinicalTrial }
-                    });
-                    throw new Exception("Participant number must be greater than 0.");
-                }
-
-                if (clinicalTrial.Status == "Ongoing" && clinicalTrial.EndDate == default)
-                {
-                    clinicalTrial.EndDate = clinicalTrial.StartDate.AddMonths(1);
-                }
-                if (clinicalTrial.EndDate != default)
-                {
-                    clinicalTrial.DurationInDays = (clinicalTrial.EndDate - clinicalTrial.StartDate).Days;
-                }
+                clinicalTrial.Validate();
 
                 var generatedClinicalTrialId = await _clinicalTrialRepository.CreateAsync(clinicalTrial);
                 await _unitOfWork.SaveChangesAsync();

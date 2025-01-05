@@ -12,5 +12,12 @@ namespace ClinicalTrial.Domain.Entities
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public string Status { get; set; }
         public int DurationInDays { get; set; }
+
+        public void Validate()
+        {
+            if (Participants < 1) throw new InvalidOperationException("Participants must be greater than zero.");
+            EndDate = Status == "Ongoing" ? StartDate.AddMonths(1) : StartDate;
+            DurationInDays = (EndDate - StartDate).Days;
+        }
     }
 }
