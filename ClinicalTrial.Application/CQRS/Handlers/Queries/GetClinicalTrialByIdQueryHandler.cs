@@ -20,7 +20,7 @@ namespace ClinicalTrial.Application.CQRS.Handlers.Queries
 
         public async Task<Domain.Entities.ClinicalTrial> Handle(GetClinicalTrialByIdQuery request, CancellationToken cancellationToken)
         {
-            var ClinicalTrial = await _clinicalTrialRepository.GetByIdAsync(request.Id);
+            var clinicalTrial = await _clinicalTrialRepository.GetByIdAsync(request.Id);
 
             _logger.LogInformation("{@SystemLog}", new SystemLog()
             {
@@ -30,7 +30,7 @@ namespace ClinicalTrial.Application.CQRS.Handlers.Queries
                 ChangeSet = new[] { request }
             });
 
-            return ClinicalTrial;
+            return clinicalTrial;
         }
     }
 }
