@@ -92,7 +92,6 @@ namespace ClinicalTrial.Application.CQRS.Handlers.Commands
                     CreatedAt = DateTime.UtcNow,
                     ChangeSet = new[] { request.file }
                 });
-                _logger.LogError(ex, "Error creating clinical trial.");
                 throw;
             }
         }
@@ -112,7 +111,13 @@ namespace ClinicalTrial.Application.CQRS.Handlers.Commands
                 {
                     foreach (var errorMessage in errorMessages)
                     {
-                        _logger.LogError("JSON Schema Validation Error: " + errorMessage);
+                        _logger.LogError("{@SystemLog}", new SystemLog()
+                        {
+                            Event = Event.Create,
+                            Comment = "Clinical Trial JSON schema validation: " + errorMessage,
+                            CreatedAt = DateTime.UtcNow,
+                            ChangeSet = new[] { errorMessage }
+                        });
                     }
                 }
 
@@ -120,7 +125,13 @@ namespace ClinicalTrial.Application.CQRS.Handlers.Commands
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error validating JSON schema.");
+                _logger.LogError("{@SystemLog}", new SystemLog()
+                {
+                    Event = Event.Create,
+                    Comment = "Clinical Trial JSON schema validation",
+                    CreatedAt = DateTime.UtcNow,
+                    ChangeSet = new[] { ex }
+                });
                 return false;
             }
         }
