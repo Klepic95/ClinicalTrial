@@ -2,7 +2,7 @@ The Clinical Trial Data Processor is a system that processes clinical trial data
 
 How to successfully configure the project locally:
 
-Clone repository, 
+Clone this repository, 
 Install and configure Docker locally (Link for download: https://www.docker.com/products/docker-desktop/)
 
 If you want to build and run application and create ms sql database using Docker, please use PowerShell and go in the root Directory of the project (Where both Dockerfile and ClinicalTrial.sln are located), and run following command: "docker-compose -f docker-compose.yml up --build". After this, please check if the containers are running in Docker Desktop app - If the API container is not running, please run it via Docker Desktop app.
